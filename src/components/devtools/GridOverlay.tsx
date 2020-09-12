@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useCallback } from 'react';
 
 import { useKeyDown } from 'hooks/use-keydown';
 import { useLocalStorage } from 'hooks/use-localstorage';
@@ -20,13 +20,13 @@ export const GridOverlay = ({ columns, baseline, button }: GridOverlayProps) => 
   const [isVerticalVisible, setVertical] = useLocalStorage(LOCAL_STORAGE_KEY_VERTICAL, false);
   const keys = useKeyDown();
 
-  const onToggleHorizontal = () => {
+  const onToggleHorizontal = useCallback(() => {
     setHorizontal(!isHorizontalVisible);
-  };
+  }, [isHorizontalVisible, setHorizontal]);
 
-  const onToggleVertical = () => {
+  const onToggleVertical = useCallback(() => {
     setVertical(!isVerticalVisible);
-  };
+  }, [isVerticalVisible, setVertical]);
 
   useEffect(() => {
     if (gridOverlayRef.current) {
@@ -44,7 +44,7 @@ export const GridOverlay = ({ columns, baseline, button }: GridOverlayProps) => 
     if (keys.includes(17) && keys.includes(77)) {
       onToggleHorizontal();
     }
-  }, [keys]);
+  }, [keys, onToggleVertical, onToggleHorizontal]);
 
   return (
     <div

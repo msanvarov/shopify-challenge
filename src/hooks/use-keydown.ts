@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 /**
  * Custom hooks that return the keys that are pressed on the keyboard
@@ -6,19 +6,25 @@ import { useState, useEffect } from 'react';
 export const useKeyDown = () => {
   const [keys, setKeys] = useState<number[]>([]);
 
-  const handleKeyDown = ({ keyCode }: KeyboardEvent) => {
-    if (keys.includes(keyCode)) {
-      return;
-    }
+  const handleKeyDown = useCallback(
+    ({ keyCode }: KeyboardEvent) => {
+      if (keys.includes(keyCode)) {
+        return;
+      }
 
-    setKeys([...keys, keyCode]);
-  };
+      setKeys([...keys, keyCode]);
+    },
+    [keys, setKeys],
+  );
 
-  const handleKeyUp = ({ keyCode }: KeyboardEvent) => {
-    const d = keys.indexOf(keyCode, 0);
+  const handleKeyUp = useCallback(
+    ({ keyCode }: KeyboardEvent) => {
+      const d = keys.indexOf(keyCode, 0);
 
-    setKeys([...keys.slice(0, d), ...keys.slice(d + 1)]);
-  };
+      setKeys([...keys.slice(0, d), ...keys.slice(d + 1)]);
+    },
+    [keys, setKeys],
+  );
 
   useEffect(() => {
     document.addEventListener('keydown', handleKeyDown, false);
@@ -28,7 +34,7 @@ export const useKeyDown = () => {
       document.removeEventListener('keydown', handleKeyDown, false);
       document.removeEventListener('keyup', handleKeyUp, false);
     };
-  }, [keys]);
+  }, [keys, handleKeyUp, handleKeyDown]);
 
   return keys;
 };

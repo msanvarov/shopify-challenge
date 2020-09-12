@@ -30,7 +30,7 @@ export const useLocalStorage = (key: string, initialValue?: TValue) => {
     } catch {
       // Noop
     }
-  }, [state]);
+  }, [state, key]);
 
   return [state, setState];
 };

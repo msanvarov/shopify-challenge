@@ -15,7 +15,7 @@ export const Devtools = () => {
     if (keys.includes(17) && keys.includes(75)) {
       setVisible(!isVisible);
     }
-  }, [keys]);
+  }, [keys, isVisible, setVisible]);
 
   return (
     <>

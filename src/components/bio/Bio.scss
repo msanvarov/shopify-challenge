@@ -1,0 +1,47 @@
+@import "~styles/config";
+/*
+Bio Area Style
+======================================================*/
+.bio-content-wrap {
+    background-image: url("https://via.placeholder.com/810x522");
+    background-position: right;
+    background-repeat: no-repeat;
+    height: 522px;
+    .bio-content {
+        margin-top: 50px;
+        span {
+            font-size: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 20px;
+            margin-top: -6px;
+        }
+        h2 {
+            font-size: 50px;
+            margin-bottom: 30px;
+            font-size: 52px;
+        }
+        p {
+            position: relative;
+            margin-left: 100px;
+            margin-bottom: 0;
+            &::before {
+                content: "";
+                position: absolute;
+                top: 10px;
+                left: -100px;
+                width: 70px;
+                height: 1px;
+                background-color: $main-color;
+            }
+        }
+        .default-btn {
+            margin-top: 40px;
+            margin-left: 100px;
+        }
+    }
+    .bio-img {
+        display: none;
+    }
+}

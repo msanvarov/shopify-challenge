@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import 'react-accessible-accordion/dist/fancy-example.css';
-import '@brainhubeu/react-carousel/lib/style.css';
+import 'react-modal-video/css/modal-video.min.css';
 
 import Home from 'pages/index';
 import About from 'pages/about';

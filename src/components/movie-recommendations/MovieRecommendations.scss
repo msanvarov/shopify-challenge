@@ -1,0 +1,98 @@
+@import "~styles/config";
+/*
+Movie Recommendation Area Style
+======================================================*/
+.exclusive-movie-area {
+    background-image: url(/img/exclusive-shop-bg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: "";
+        background-color: rgba(0, 0, 0, 0.9);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .container {
+        max-width: 1475px;
+    }
+}
+.exclusive-img {
+    position: relative;
+    z-index: 1;
+    .exclusive-img-2 {
+        position: absolute;
+        top: 25px;
+        right: 0;
+        z-index: -1;
+        animation: rotation 100s infinite linear;
+        img {
+            border-radius: 50%;
+        }
+    }
+}
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+.exclusive-video-list {
+    background-color: $white-color;
+    padding: 40px;
+    overflow-y: scroll;
+    .row {
+        margin-bottom: 20px;
+    }
+    .exclusive-list-img {
+        text-align: center;
+    }
+    h3 {
+        margin-bottom: 15px;
+    }
+    span {
+        font-size: 18px;
+        font-family: $paragraph-font-family;
+        display: block;
+        margin-bottom: 10px;
+        color: $main-color;
+        del {
+            margin-right: 10px;
+            color: $body-color;
+        }
+    }
+    ul {
+        font-family: $paragraph-font-family;
+        margin-bottom: 20px;
+        li {
+            display: inline-block;
+            border-right: 1px solid $body-color;
+            font-size: 16px;
+            padding-right: 15px;
+            margin-right: 15px;
+            &:last-child {
+                border-right: none;
+                padding-right: 0;
+                margin-right: 0;
+            }
+        }
+    }
+    .default-btn {
+        font-size: 15px;
+        padding: 12px 25px;
+        font-size: 11px;
+        i {
+            margin-right: 5px;
+            position: relative;
+            top: -1px;
+        }
+    }
+}

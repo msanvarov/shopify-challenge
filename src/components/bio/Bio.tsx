@@ -27,7 +27,7 @@ const Bio = () => {
 
             <div className="col-lg-4">
               <div className="bio-img">
-                <img src="https://via.placeholder.com/810x522" alt="bio photo" />
+                <img src="https://via.placeholder.com/810x522" alt="bio" />
               </div>
             </div>
           </div>

@@ -100,7 +100,7 @@
   },
   "scripts": {
     "start": "SASS_PATH=node_modules:src react-scripts start",
-    "build": "react-scripts build",
+    "build": "SASS_PATH=node_modules:src react-scripts build",
     "lint": "yarn prettier && npm run tslint && npm run stylelint",
     "tslint": "tslint --fix 'src/**/*.{ts,tsx}' --project tsconfig.json",
     "stylelint": "stylelint 'src/**/*.scss' --syntax scss",

@@ -1,6 +1,6 @@
 export enum MenuActionTypes {
-  COLLAPSED_STATE = 'COLLAPSED_STATE',
-  SIDEMENU_MODAL_STATE = 'SIDEMENU_MODAL_STATE',
+  COLLAPSED_STATE = '@@menu/COLLAPSED_STATE',
+  SIDEMENU_MODAL_STATE = '@@menu/SIDEMENU_MODAL_STATE',
 }
 
 export interface MenuState {

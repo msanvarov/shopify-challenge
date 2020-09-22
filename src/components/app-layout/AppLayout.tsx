@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { ToastContainer, Slide } from 'react-toastify';
 import { Helmet } from 'react-helmet';
 
@@ -8,20 +8,19 @@ import Header from 'components/header/Header';
 import ToTop from 'components/to-top/ToTop';
 import Footer from 'components/footer/Footer';
 
-interface AppLayoutProps {
-  children: ReactNode;
-}
+const AppLayout: React.FC = ({ children }) => {
+  return (
+    <>
+      <Helmet {...helmet} />
+      <Header />
 
-// tslint:disable no-default-export
-export default ({ children }: AppLayoutProps) => (
-  <>
-    <Helmet {...helmet} />
-    <Header />
+      {children}
 
-    {children}
+      <ToTop scrollStepInPx={100} delayInMs={10.5} />
+      <ToastContainer transition={Slide} />
+      <Footer />
+    </>
+  );
+};
 
-    <ToTop scrollStepInPx={100} delayInMs={10.5} />
-    <ToastContainer transition={Slide} />
-    <Footer />
-  </>
-);
+export default AppLayout;

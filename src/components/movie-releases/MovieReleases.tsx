@@ -4,10 +4,11 @@ import OwlCarousel from 'react-owl-carousel3';
 // @ts-expect-error
 import ModalVideo from 'react-modal-video';
 import { Link } from 'react-router-dom';
-
-import './MovieReleases.scss';
+import { Container } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
+
+import './MovieReleases.scss';
 
 const options = {
   loop: true,
@@ -46,7 +47,7 @@ const MovieReleases = () => {
   return (
     <>
       <div className="latest-trailer ptb-100">
-        <div className="container">
+        <Container>
           <div className="row align-items-center">
             <div className="col-lg-6">
               <div className="latest-trailer-content">
@@ -190,7 +191,7 @@ const MovieReleases = () => {
               </OwlCarousel>
             </div>
           </div>
-        </div>
+        </Container>
       </div>
 
       {/* If you want to change the video need to update videoID */}

@@ -128,7 +128,7 @@ const Footer: React.FC = () => {
       </footer>
 
       <footer className="footer-bottom-area">
-        <div className="container">
+        <Container>
           <div className="copyright-wrap">
             <p>
               Made with{' '}
@@ -142,7 +142,7 @@ const Footer: React.FC = () => {
               by Sal Anvarov
             </p>
           </div>
-        </div>
+        </Container>
       </footer>
     </>
   );

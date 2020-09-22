@@ -6,8 +6,7 @@ import HeroCarousel from 'components/hero-carousel/HeroCarousel';
 import MovieRecommendations from 'components/movie-recommendations/MovieRecommendations';
 import MovieReleases from 'components/movie-releases/MovieReleases';
 
-// tslint:disable no-default-export
-export default () => (
+const LandingPage = () => (
   <>
     <Helmet title="Home" />
 
@@ -17,3 +16,5 @@ export default () => (
     <MovieRecommendations />
   </>
 );
+
+export default LandingPage;

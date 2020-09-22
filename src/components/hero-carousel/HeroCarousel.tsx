@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 import './HeroCarousel.scss';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { Container } from 'react-bootstrap';
 
 const options = {
   loop: true,
@@ -27,7 +28,7 @@ const HeroCarousel = () => {
         <div className="hero-carousel-item bg-1">
           <div className="d-table">
             <div className="d-table-cell">
-              <div className="container">
+              <Container>
                 <div className="hero-carousel-text one">
                   <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
                   <p>Movie Recommendation</p>
@@ -38,7 +39,7 @@ const HeroCarousel = () => {
                     </Link>
                   </div>
                 </div>
-              </div>
+              </Container>
             </div>
           </div>
         </div>
@@ -46,7 +47,7 @@ const HeroCarousel = () => {
         <div className="hero-carousel-item bg-2">
           <div className="d-table">
             <div className="d-table-cell">
-              <div className="container">
+              <Container>
                 <div className="hero-carousel-text two">
                   <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
                   <p>Movie Recommendation</p>
@@ -57,7 +58,7 @@ const HeroCarousel = () => {
                     </Link>
                   </div>
                 </div>
-              </div>
+              </Container>
             </div>
           </div>
         </div>

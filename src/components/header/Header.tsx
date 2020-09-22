@@ -2,18 +2,18 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEllipsisV, faAward } from '@fortawesome/free-solid-svg-icons';
+import { faAward, faBookReader, faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 import * as menuActions from 'store/menu/actions';
 
 import './Header.scss';
 import LogoMDPNG from 'assets/logo-md.png';
-import { RootAppState } from 'store';
+import { IApplicationState } from 'store';
 import SideMenuModal from './side-menu-modal/SideMenuModal';
 
 const Header = () => {
   const dispatch = useDispatch();
   // const movies = useSelector((state) => state.nominatedMovies);
-  const collapsed = useSelector((state: RootAppState) => state.menu.collapsedState);
+  const collapsed = useSelector((state: IApplicationState) => state.menu.collapsedState);
 
   const toggleNavbar = () => {
     dispatch(menuActions.collapsedState());
@@ -60,7 +60,7 @@ const Header = () => {
                 aria-expanded="false"
                 aria-label="Toggle navigation"
               >
-                <FontAwesomeIcon icon={faEllipsisV} />
+                <FontAwesomeIcon icon={faEllipsisV} size="lg" />
               </button>
               <div className={classOne} id="navbarSupportedContent">
                 <ul className="navbar-nav m-auto">
@@ -98,7 +98,9 @@ const Header = () => {
                 <div className="others-option">
                   <div className="cart-icon">
                     <NavLink to="/nominations">
-                      <FontAwesomeIcon icon={faAward} size="lg" />
+                      <i>
+                        <FontAwesomeIcon icon={faAward} size="lg" />
+                      </i>
                       <span>{0}</span>
                     </NavLink>
                   </div>
@@ -112,7 +114,9 @@ const Header = () => {
                         toggleSideMenuModal();
                       }}
                     >
-                      <FontAwesomeIcon icon={faEllipsisV} size="lg" />
+                      <i>
+                        <FontAwesomeIcon icon={faBookReader} size="lg" />
+                      </i>
                     </a>
                   </div>
                 </div>

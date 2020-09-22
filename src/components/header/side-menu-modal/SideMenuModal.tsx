@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { RootAppState } from 'store';
+import { IApplicationState } from 'store';
 import * as menuActions from 'store/menu/actions';
 
 import './SideMenuModal.scss';
@@ -11,7 +11,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const SideMenuModal = () => {
   const dispatch = useDispatch();
-  const sideMenuModal = useSelector((state: RootAppState) => state.menu.sideMenuModalState);
+  const sideMenuModal = useSelector((state: IApplicationState) => state.menu.sideMenuModalState);
 
   // side-menu toggler
   const toggleSideMenuModal = () => {
